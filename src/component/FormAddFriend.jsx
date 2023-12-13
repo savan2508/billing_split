@@ -5,7 +5,7 @@ export function FormAddFriend({ onAddFriend }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("https://i.pravatar.cc/48");
 
-  function handleAddFriend(e) {
+  async function handleAddFriend(e) {
     e.preventDefault();
 
     const id = crypto.randomUUID();
@@ -19,7 +19,7 @@ export function FormAddFriend({ onAddFriend }) {
       balance: 0,
     };
 
-    onAddFriend(newFriend);
+    await onAddFriend(newFriend);
 
     setName("");
     setImage("https://i.pravatar.cc/48");
